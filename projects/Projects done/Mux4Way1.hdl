@@ -1,0 +1,9 @@
+CHIP Mux4Way{
+IN a,b,c,d,sel[2];
+OUT out;
+
+PARTS:
+Not(in=sel[0], out=sel0not);
+Not(in=sel[1], out=sel1not);
+And(a=a, b=sel1not, out=w1)
+}
